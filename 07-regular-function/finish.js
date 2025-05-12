@@ -8,3 +8,19 @@
  *
  * 4. Вызовите функцию
  */
+
+// The 1st example
+  function functionForIlona() {
+    return console.log('Ilona');
+  }  
+
+  functionForIlona(); 
+
+ 
+// The 2nd example, review solutions.js
+function functionForIlonaTwo() {
+    const name = 'Ilona'
+    return console.log(name);
+  }  
+
+  functionForIlonaTwo(); 

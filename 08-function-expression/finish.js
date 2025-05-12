@@ -10,3 +10,10 @@
  *
  * 5. Результат вызовов функции выведите в консоль
  */
+
+
+function functionForIlonaTwo(name) {   
+    return 'Привет, ' + name;
+  }  
+console.log(functionForIlonaTwo('Ilona'));
+console.log(functionForIlonaTwo('Lilya'));

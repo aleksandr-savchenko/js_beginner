@@ -7,3 +7,15 @@
  *
  * 3. Создайте многострочный комментарий
  */
+
+// One line comment
+
+
+// new variable with name = myVariable and value = Comment
+let myVariable = 'Comment';
+
+
+/*
+More than 1 line comment 
+*/
+let myVariableTwo = 'Comment';

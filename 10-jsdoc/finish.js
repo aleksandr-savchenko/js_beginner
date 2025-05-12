@@ -12,3 +12,18 @@
  *
  * 4. Вызовите функцию
  */
+
+/*
+ "Возвращает разницу двух чисел"
+ тип параметров: number
+*/
+function functionForIlonaTwo(a, b) {   
+    return a - b;
+  } 
+
+functionForIlonaTwo(40, 20);
+let result = functionForIlonaTwo(40, 20);
+
+
+/* Разница чисел */
+console.log("Разница чисел = " + result);
