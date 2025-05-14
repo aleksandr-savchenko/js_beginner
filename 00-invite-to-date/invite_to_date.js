@@ -22,9 +22,9 @@ function sendTelegramMessage(message) {
   const url = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(message)}`;
   https.get(url, (res) => {
     if (res.statusCode === 200) {
-      console.log('✔️ Deine Antwort wurde gesendet! 😉');
+      console.log('✔️ Deine Antwort wurde mit einem Lächeln verschickt! 😉');
     } else {
-      console.log('⚠️ Nachricht konnte nicht gesendet werden. Versuche es später noch einmal.');
+      console.log('⚠️ Nachricht konnte nicht gesendet werden. Vielleicht war das Schicksal?');
     }
   }).on('error', (err) => {
     console.log('❌ Fehler beim Verbinden mit Telegram:', err.message);
@@ -32,16 +32,16 @@ function sendTelegramMessage(message) {
 }
 
 // Интерфейс
-rl.question('Willst du mit Sascha ausgehen? 💚💙 (ja / nein): ', (answer) => {
+rl.question('Würdest du mit Sascha auf ein romantisches Date gehen? 💚💙 (ja / nein): ', (answer) => {
   const response = (answer || '').trim().toLowerCase();
   let localMessage = '';
 
   if (response === 'ja') {
-    localMessage = '😳 Wirklich?! Ich prüfe die Internetverbindung und sende deine Antwort 💌...';
+    localMessage = '😳 Wirklich? Ich bin gerade ein bisschen sprachlos... Lass mich schnell die Verbindung prüfen und deine süße Antwort senden 💌...';
   } else if (response === 'nein') {
-    localMessage = '🤷 Ich notiere: zugestimmt!';
+    localMessage = '🤷 Ich nehme das mal als charmantes „Vielleicht“ und schreib einfach: Sie hat zugestimmt ✨';
   } else {
-    localMessage = '🤔 Unentschlossenheit gilt als Ja!';
+    localMessage = '🤔 Deine geheimnisvolle Antwort klingt verdächtig nach Ja... 😉';
   }
 
   console.log(localMessage);
@@ -50,7 +50,7 @@ rl.question('Willst du mit Sascha ausgehen? 💚💙 (ja / nein): ', (answer) =>
     if (online) {
       sendTelegramMessage(MESSAGE_YES); // всегда отправляем "она согласна"
     } else {
-      console.log('🚫 Keine Internetverbindung.');
+      console.log('🚫 Huch... keine Internetverbindung. Aber sein Herz ist trotzdem online.');
     }
     rl.close();
   });
